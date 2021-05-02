@@ -1,0 +1,13 @@
+tqdm
+gym
+nes-py
+torch
+torchvision
+stable-baselines[mpi]
+tfrecord_lite
+git+https://github.com/widmi/widis-lstm-tools@master
+tensorflow-gpu==1.15
+torch
+torchvision
+tensorboardX
+mujoco_py

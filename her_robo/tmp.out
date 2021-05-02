@@ -1,0 +1,182 @@
+Logging to /tmp/openai-2019-08-31-20-46-55-793906
+--------------------------------------------------------------------------
+A process has executed an operation involving a call to the
+"fork()" system call to create a child process.  Open MPI is currently
+operating in a condition that could result in memory corruption or
+other system errors; your job may hang, crash, or produce silent
+data corruption.  The use of fork() (or system() or other calls that
+create child processes) is strongly discouraged.
+
+The process that invoked fork was:
+
+  Local host:          [[37484,1],0] (PID 32019)
+
+If you are *absolutely sure* that your application will successfully
+and correctly survive a call to fork(), you may disable this warning
+by setting the mpi_warn_on_fork MCA parameter to 0.
+--------------------------------------------------------------------------
+env_type: robotics
+Training her on robotics:FetchReach-v1 with arguments 
+{'network': 'mlp'}
+T: 50
+_Q_lr: 0.001
+_action_l2: 1.0
+_batch_size: 256
+_buffer_size: 1000000
+_clip_obs: 200.0
+_hidden: 256
+_layers: 3
+_max_u: 1.0
+_network_class: baselines.her.actor_critic:ActorCritic
+_norm_clip: 5
+_norm_eps: 0.01
+_pi_lr: 0.001
+_polyak: 0.95
+_relative_goals: False
+_scope: ddpg
+aux_loss_weight: 0.0078
+bc_loss: 0
+ddpg_params: {'buffer_size': 1000000, 'hidden': 256, 'layers': 3, 'network_class': 'baselines.her.actor_critic:ActorCritic', 'polyak': 0.95, 'batch_size': 256, 'Q_lr': 0.001, 'pi_lr': 0.001, 'norm_eps': 0.01, 'norm_clip': 5, 'max_u': 1.0, 'action_l2': 1.0, 'clip_obs': 200.0, 'scope': 'ddpg', 'relative_goals': False}
+demo_batch_size: 128
+env_name: FetchReach-v1
+gamma: 0.98
+make_env: <function prepare_params.<locals>.make_env at 0x7fadd50e7400>
+n_batches: 40
+n_cycles: 10
+n_test_rollouts: 10
+noise_eps: 0.2
+num_demo: 100
+prm_loss_weight: 0.001
+q_filter: 0
+random_eps: 0.3
+replay_k: 4
+replay_strategy: future
+rollout_batch_size: 1
+test_with_polyak: False
+
+*** Warning ***
+You are running HER with just a single MPI worker. This will work, but the experiments that we report in Plappert et al. (2018, https://arxiv.org/abs/1802.09464) were obtained with --num_cpu 19. This makes a significant difference and if you are looking to reproduce those results, be aware of this. Please also refer to https://github.com/openai/baselines/issues/314 for further details.
+****************
+
+Creating a DDPG agent with action space 4 x 1.0...
+Training...
+---------------------------------
+| epoch              | 0        |
+| stats_g/mean       | 0.869    |
+| stats_g/std        | 0.0893   |
+| stats_o/mean       | 0.262    |
+| stats_o/std        | 0.0309   |
+| test/episode       | 10       |
+| test/mean_Q        | -0.494   |
+| test/success_rate  | 0.6      |
+| train/episode      | 10       |
+| train/success_rate | 0.2      |
+---------------------------------
+---------------------------------
+| epoch              | 1        |
+| stats_g/mean       | 0.866    |
+| stats_g/std        | 0.0845   |
+| stats_o/mean       | 0.261    |
+| stats_o/std        | 0.0295   |
+| test/episode       | 20       |
+| test/mean_Q        | -0.774   |
+| test/success_rate  | 0.7      |
+| train/episode      | 20       |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 2        |
+| stats_g/mean       | 0.874    |
+| stats_g/std        | 0.0899   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.031    |
+| test/episode       | 30       |
+| test/mean_Q        | -0.428   |
+| test/success_rate  | 0.9      |
+| train/episode      | 30       |
+| train/success_rate | 0.6      |
+---------------------------------
+---------------------------------
+| epoch              | 3        |
+| stats_g/mean       | 0.878    |
+| stats_g/std        | 0.0883   |
+| stats_o/mean       | 0.264    |
+| stats_o/std        | 0.0307   |
+| test/episode       | 40       |
+| test/mean_Q        | -0.362   |
+| test/success_rate  | 1        |
+| train/episode      | 40       |
+| train/success_rate | 0.9      |
+---------------------------------
+---------------------------------
+| epoch              | 4        |
+| stats_g/mean       | 0.875    |
+| stats_g/std        | 0.0863   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.0302   |
+| test/episode       | 50       |
+| test/mean_Q        | -0.31    |
+| test/success_rate  | 1        |
+| train/episode      | 50       |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 5        |
+| stats_g/mean       | 0.875    |
+| stats_g/std        | 0.0847   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.03     |
+| test/episode       | 60       |
+| test/mean_Q        | -0.174   |
+| test/success_rate  | 1        |
+| train/episode      | 60       |
+| train/success_rate | 1        |
+---------------------------------
+---------------------------------
+| epoch              | 6        |
+| stats_g/mean       | 0.872    |
+| stats_g/std        | 0.0863   |
+| stats_o/mean       | 0.262    |
+| stats_o/std        | 0.0306   |
+| test/episode       | 70       |
+| test/mean_Q        | -0.16    |
+| test/success_rate  | 1        |
+| train/episode      | 70       |
+| train/success_rate | 0.9      |
+---------------------------------
+---------------------------------
+| epoch              | 7        |
+| stats_g/mean       | 0.876    |
+| stats_g/std        | 0.0877   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 80       |
+| test/mean_Q        | -0.0555  |
+| test/success_rate  | 1        |
+| train/episode      | 80       |
+| train/success_rate | 0.9      |
+---------------------------------
+---------------------------------
+| epoch              | 8        |
+| stats_g/mean       | 0.876    |
+| stats_g/std        | 0.0885   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 90       |
+| test/mean_Q        | -0.0714  |
+| test/success_rate  | 1        |
+| train/episode      | 90       |
+| train/success_rate | 0.9      |
+---------------------------------
+---------------------------------
+| epoch              | 9        |
+| stats_g/mean       | 0.875    |
+| stats_g/std        | 0.0893   |
+| stats_o/mean       | 0.263    |
+| stats_o/std        | 0.0316   |
+| test/episode       | 100      |
+| test/mean_Q        | -0.0425  |
+| test/success_rate  | 1        |
+| train/episode      | 100      |
+| train/success_rate | 0.8      |
+---------------------------------

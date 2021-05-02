@@ -1,0 +1,1722 @@
+Logging to /tmp/openai-2019-08-31-21-25-52-954313
+--------------------------------------------------------------------------
+A process has executed an operation involving a call to the
+"fork()" system call to create a child process.  Open MPI is currently
+operating in a condition that could result in memory corruption or
+other system errors; your job may hang, crash, or produce silent
+data corruption.  The use of fork() (or system() or other calls that
+create child processes) is strongly discouraged.
+
+The process that invoked fork was:
+
+  Local host:          [[43949,1],0] (PID 14833)
+
+If you are *absolutely sure* that your application will successfully
+and correctly survive a call to fork(), you may disable this warning
+by setting the mpi_warn_on_fork MCA parameter to 0.
+--------------------------------------------------------------------------
+env_type: blocked
+Training her on blocked:FetchBlocked-v1 with arguments 
+{'network': 'mlp'}
+T: 50
+_Q_lr: 0.001
+_action_l2: 1.0
+_batch_size: 256
+_buffer_size: 1000000
+_clip_obs: 200.0
+_hidden: 256
+_layers: 3
+_max_u: 1.0
+_network_class: baselines.her.actor_critic:ActorCritic
+_norm_clip: 5
+_norm_eps: 0.01
+_pi_lr: 0.001
+_polyak: 0.95
+_relative_goals: False
+_scope: ddpg
+aux_loss_weight: 0.0078
+bc_loss: 0
+ddpg_params: {'buffer_size': 1000000, 'hidden': 256, 'layers': 3, 'network_class': 'baselines.her.actor_critic:ActorCritic', 'polyak': 0.95, 'batch_size': 256, 'Q_lr': 0.001, 'pi_lr': 0.001, 'norm_eps': 0.01, 'norm_clip': 5, 'max_u': 1.0, 'action_l2': 1.0, 'clip_obs': 200.0, 'scope': 'ddpg', 'relative_goals': False}
+demo_batch_size: 128
+env_name: FetchBlocked-v1
+gamma: 0.98
+make_env: <function prepare_params.<locals>.make_env at 0x7fd8f9e8ed08>
+n_batches: 40
+n_cycles: 50
+n_test_rollouts: 10
+noise_eps: 0.2
+num_demo: 100
+prm_loss_weight: 0.001
+q_filter: 0
+random_eps: 0.3
+replay_k: 4
+replay_strategy: future
+rollout_batch_size: 1
+test_with_polyak: False
+
+*** Warning ***
+You are running HER with just a single MPI worker. This will work, but the experiments that we report in Plappert et al. (2018, https://arxiv.org/abs/1802.09464) were obtained with --num_cpu 19. This makes a significant difference and if you are looking to reproduce those results, be aware of this. Please also refer to https://github.com/openai/baselines/issues/314 for further details.
+****************
+
+Creating a DDPG agent with action space 4 x 1.0...
+Training...
+---------------------------------
+| epoch              | 0        |
+| stats_g/mean       | 0.787    |
+| stats_g/std        | 0.0908   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0222   |
+| test/episode       | 10       |
+| test/mean_Q        | -2.57    |
+| test/success_rate  | 0.2      |
+| train/episode      | 50       |
+| train/success_rate | 0.16     |
+---------------------------------
+New best success rate: 0.20000000298023224. Saving policy to ./ckpt/demo/policy_best.pkl ...
+Saving periodic policy to ./ckpt/demo/policy_0.pkl ...
+---------------------------------
+| epoch              | 1        |
+| stats_g/mean       | 0.795    |
+| stats_g/std        | 0.0881   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0224   |
+| test/episode       | 20       |
+| test/mean_Q        | -3.97    |
+| test/success_rate  | 0.3      |
+| train/episode      | 100      |
+| train/success_rate | 0.32     |
+---------------------------------
+New best success rate: 0.30000001192092896. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 2        |
+| stats_g/mean       | 0.8      |
+| stats_g/std        | 0.0898   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0238   |
+| test/episode       | 30       |
+| test/mean_Q        | -2.88    |
+| test/success_rate  | 0.7      |
+| train/episode      | 150      |
+| train/success_rate | 0.32     |
+---------------------------------
+New best success rate: 0.699999988079071. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 3        |
+| stats_g/mean       | 0.803    |
+| stats_g/std        | 0.0908   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0247   |
+| test/episode       | 40       |
+| test/mean_Q        | -3.42    |
+| test/success_rate  | 0.6      |
+| train/episode      | 200      |
+| train/success_rate | 0.44     |
+---------------------------------
+---------------------------------
+| epoch              | 4        |
+| stats_g/mean       | 0.807    |
+| stats_g/std        | 0.0911   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0252   |
+| test/episode       | 50       |
+| test/mean_Q        | -6.44    |
+| test/success_rate  | 0.3      |
+| train/episode      | 250      |
+| train/success_rate | 0.44     |
+---------------------------------
+---------------------------------
+| epoch              | 5        |
+| stats_g/mean       | 0.81     |
+| stats_g/std        | 0.0931   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.026    |
+| test/episode       | 60       |
+| test/mean_Q        | -6.69    |
+| test/success_rate  | 0.4      |
+| train/episode      | 300      |
+| train/success_rate | 0.32     |
+---------------------------------
+---------------------------------
+| epoch              | 6        |
+| stats_g/mean       | 0.815    |
+| stats_g/std        | 0.0965   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0273   |
+| test/episode       | 70       |
+| test/mean_Q        | -6       |
+| test/success_rate  | 0.5      |
+| train/episode      | 350      |
+| train/success_rate | 0.64     |
+---------------------------------
+---------------------------------
+| epoch              | 7        |
+| stats_g/mean       | 0.82     |
+| stats_g/std        | 0.0982   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0282   |
+| test/episode       | 80       |
+| test/mean_Q        | -3.62    |
+| test/success_rate  | 0.7      |
+| train/episode      | 400      |
+| train/success_rate | 0.64     |
+---------------------------------
+New best success rate: 0.699999988079071. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 8        |
+| stats_g/mean       | 0.824    |
+| stats_g/std        | 0.0992   |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0287   |
+| test/episode       | 90       |
+| test/mean_Q        | -1.46    |
+| test/success_rate  | 1        |
+| train/episode      | 450      |
+| train/success_rate | 0.58     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 9        |
+| stats_g/mean       | 0.827    |
+| stats_g/std        | 0.1      |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0293   |
+| test/episode       | 100      |
+| test/mean_Q        | -2.38    |
+| test/success_rate  | 0.8      |
+| train/episode      | 500      |
+| train/success_rate | 0.58     |
+---------------------------------
+---------------------------------
+| epoch              | 10       |
+| stats_g/mean       | 0.829    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0298   |
+| test/episode       | 110      |
+| test/mean_Q        | -2       |
+| test/success_rate  | 0.9      |
+| train/episode      | 550      |
+| train/success_rate | 0.62     |
+---------------------------------
+---------------------------------
+| epoch              | 11       |
+| stats_g/mean       | 0.832    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0301   |
+| test/episode       | 120      |
+| test/mean_Q        | -2.13    |
+| test/success_rate  | 1        |
+| train/episode      | 600      |
+| train/success_rate | 0.64     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 12       |
+| stats_g/mean       | 0.833    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0304   |
+| test/episode       | 130      |
+| test/mean_Q        | -1.68    |
+| test/success_rate  | 0.9      |
+| train/episode      | 650      |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 13       |
+| stats_g/mean       | 0.834    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0305   |
+| test/episode       | 140      |
+| test/mean_Q        | -0.583   |
+| test/success_rate  | 1        |
+| train/episode      | 700      |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 14       |
+| stats_g/mean       | 0.835    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0308   |
+| test/episode       | 150      |
+| test/mean_Q        | -1.92    |
+| test/success_rate  | 0.8      |
+| train/episode      | 750      |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 15       |
+| stats_g/mean       | 0.836    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0307   |
+| test/episode       | 160      |
+| test/mean_Q        | -2.02    |
+| test/success_rate  | 0.9      |
+| train/episode      | 800      |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 16       |
+| stats_g/mean       | 0.837    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0307   |
+| test/episode       | 170      |
+| test/mean_Q        | -3.11    |
+| test/success_rate  | 0.8      |
+| train/episode      | 850      |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 17       |
+| stats_g/mean       | 0.838    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0308   |
+| test/episode       | 180      |
+| test/mean_Q        | -1.17    |
+| test/success_rate  | 0.9      |
+| train/episode      | 900      |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 18       |
+| stats_g/mean       | 0.838    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0308   |
+| test/episode       | 190      |
+| test/mean_Q        | -2.42    |
+| test/success_rate  | 0.8      |
+| train/episode      | 950      |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 19       |
+| stats_g/mean       | 0.838    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0308   |
+| test/episode       | 200      |
+| test/mean_Q        | -0.815   |
+| test/success_rate  | 1        |
+| train/episode      | 1e+03    |
+| train/success_rate | 0.64     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 20       |
+| stats_g/mean       | 0.839    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0309   |
+| test/episode       | 210      |
+| test/mean_Q        | -4.48    |
+| test/success_rate  | 0.6      |
+| train/episode      | 1.05e+03 |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 21       |
+| stats_g/mean       | 0.841    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.031    |
+| test/episode       | 220      |
+| test/mean_Q        | -4.82    |
+| test/success_rate  | 0.7      |
+| train/episode      | 1.1e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 22       |
+| stats_g/mean       | 0.841    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0311   |
+| test/episode       | 230      |
+| test/mean_Q        | -1.07    |
+| test/success_rate  | 1        |
+| train/episode      | 1.15e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 23       |
+| stats_g/mean       | 0.842    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 240      |
+| test/mean_Q        | -2.33    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.2e+03  |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 24       |
+| stats_g/mean       | 0.842    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 250      |
+| test/mean_Q        | -3.23    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.25e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 25       |
+| stats_g/mean       | 0.843    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 260      |
+| test/mean_Q        | -2.44    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.3e+03  |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 26       |
+| stats_g/mean       | 0.843    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 270      |
+| test/mean_Q        | -1.21    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.35e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 27       |
+| stats_g/mean       | 0.843    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 280      |
+| test/mean_Q        | -1.02    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.4e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 28       |
+| stats_g/mean       | 0.843    |
+| stats_g/std        | 0.1      |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0312   |
+| test/episode       | 290      |
+| test/mean_Q        | -3.34    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.45e+03 |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 29       |
+| stats_g/mean       | 0.844    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0313   |
+| test/episode       | 300      |
+| test/mean_Q        | -2.55    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.5e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 30       |
+| stats_g/mean       | 0.843    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0313   |
+| test/episode       | 310      |
+| test/mean_Q        | -2.61    |
+| test/success_rate  | 0.8      |
+| train/episode      | 1.55e+03 |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 31       |
+| stats_g/mean       | 0.844    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0313   |
+| test/episode       | 320      |
+| test/mean_Q        | -2.59    |
+| test/success_rate  | 0.8      |
+| train/episode      | 1.6e+03  |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 32       |
+| stats_g/mean       | 0.844    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0313   |
+| test/episode       | 330      |
+| test/mean_Q        | -3.42    |
+| test/success_rate  | 0.6      |
+| train/episode      | 1.65e+03 |
+| train/success_rate | 0.84     |
+---------------------------------
+---------------------------------
+| epoch              | 33       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 340      |
+| test/mean_Q        | -3.51    |
+| test/success_rate  | 0.8      |
+| train/episode      | 1.7e+03  |
+| train/success_rate | 0.82     |
+---------------------------------
+---------------------------------
+| epoch              | 34       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 350      |
+| test/mean_Q        | -3.43    |
+| test/success_rate  | 0.7      |
+| train/episode      | 1.75e+03 |
+| train/success_rate | 0.6      |
+---------------------------------
+---------------------------------
+| epoch              | 35       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.1      |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 360      |
+| test/mean_Q        | -2.07    |
+| test/success_rate  | 1        |
+| train/episode      | 1.8e+03  |
+| train/success_rate | 0.58     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 36       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.1      |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 370      |
+| test/mean_Q        | -1.05    |
+| test/success_rate  | 1        |
+| train/episode      | 1.85e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 37       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.1      |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0314   |
+| test/episode       | 380      |
+| test/mean_Q        | -3.09    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.9e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 38       |
+| stats_g/mean       | 0.845    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0315   |
+| test/episode       | 390      |
+| test/mean_Q        | -3.61    |
+| test/success_rate  | 0.9      |
+| train/episode      | 1.95e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 39       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0315   |
+| test/episode       | 400      |
+| test/mean_Q        | -2.37    |
+| test/success_rate  | 1        |
+| train/episode      | 2e+03    |
+| train/success_rate | 0.66     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 40       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0315   |
+| test/episode       | 410      |
+| test/mean_Q        | -3.1     |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.05e+03 |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 41       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0316   |
+| test/episode       | 420      |
+| test/mean_Q        | -3.64    |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.1e+03  |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 42       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0316   |
+| test/episode       | 430      |
+| test/mean_Q        | -1.18    |
+| test/success_rate  | 1        |
+| train/episode      | 2.15e+03 |
+| train/success_rate | 0.6      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 43       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0317   |
+| test/episode       | 440      |
+| test/mean_Q        | -0.629   |
+| test/success_rate  | 1        |
+| train/episode      | 2.2e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 44       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0318   |
+| test/episode       | 450      |
+| test/mean_Q        | -1.23    |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.25e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 45       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0318   |
+| test/episode       | 460      |
+| test/mean_Q        | -0.894   |
+| test/success_rate  | 1        |
+| train/episode      | 2.3e+03  |
+| train/success_rate | 0.72     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 46       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 470      |
+| test/mean_Q        | -4.03    |
+| test/success_rate  | 0.6      |
+| train/episode      | 2.35e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 47       |
+| stats_g/mean       | 0.846    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 480      |
+| test/mean_Q        | -1.37    |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.4e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 48       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 490      |
+| test/mean_Q        | -1.5     |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.45e+03 |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 49       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 500      |
+| test/mean_Q        | -2.48    |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.5e+03  |
+| train/success_rate | 0.58     |
+---------------------------------
+---------------------------------
+| epoch              | 50       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 510      |
+| test/mean_Q        | -1.36    |
+| test/success_rate  | 0.9      |
+| train/episode      | 2.55e+03 |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 51       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 520      |
+| test/mean_Q        | -1.07    |
+| test/success_rate  | 1        |
+| train/episode      | 2.6e+03  |
+| train/success_rate | 0.64     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 52       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 530      |
+| test/mean_Q        | -2.72    |
+| test/success_rate  | 0.8      |
+| train/episode      | 2.65e+03 |
+| train/success_rate | 0.58     |
+---------------------------------
+---------------------------------
+| epoch              | 53       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 540      |
+| test/mean_Q        | -1.19    |
+| test/success_rate  | 1        |
+| train/episode      | 2.7e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 54       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 550      |
+| test/mean_Q        | -3.48    |
+| test/success_rate  | 0.8      |
+| train/episode      | 2.75e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 55       |
+| stats_g/mean       | 0.847    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 560      |
+| test/mean_Q        | -1.59    |
+| test/success_rate  | 1        |
+| train/episode      | 2.8e+03  |
+| train/success_rate | 0.8      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 56       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 570      |
+| test/mean_Q        | -1.03    |
+| test/success_rate  | 1        |
+| train/episode      | 2.85e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 57       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 580      |
+| test/mean_Q        | -0.455   |
+| test/success_rate  | 1        |
+| train/episode      | 2.9e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 58       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 590      |
+| test/mean_Q        | -4.99    |
+| test/success_rate  | 0.8      |
+| train/episode      | 2.95e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 59       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 600      |
+| test/mean_Q        | -4.99    |
+| test/success_rate  | 0.7      |
+| train/episode      | 3e+03    |
+| train/success_rate | 0.58     |
+---------------------------------
+---------------------------------
+| epoch              | 60       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 610      |
+| test/mean_Q        | -4.5     |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.05e+03 |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 61       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 620      |
+| test/mean_Q        | -1.8     |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.1e+03  |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 62       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 630      |
+| test/mean_Q        | -2.9     |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.15e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 63       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 640      |
+| test/mean_Q        | -5.11    |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.2e+03  |
+| train/success_rate | 0.64     |
+---------------------------------
+---------------------------------
+| epoch              | 64       |
+| stats_g/mean       | 0.848    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 650      |
+| test/mean_Q        | -0.622   |
+| test/success_rate  | 1        |
+| train/episode      | 3.25e+03 |
+| train/success_rate | 0.62     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 65       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 660      |
+| test/mean_Q        | -2.96    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.3e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 66       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 670      |
+| test/mean_Q        | -0.822   |
+| test/success_rate  | 1        |
+| train/episode      | 3.35e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 67       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 680      |
+| test/mean_Q        | -0.961   |
+| test/success_rate  | 1        |
+| train/episode      | 3.4e+03  |
+| train/success_rate | 0.8      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 68       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 690      |
+| test/mean_Q        | -3.65    |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.45e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 69       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 700      |
+| test/mean_Q        | -3.36    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.5e+03  |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 70       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 710      |
+| test/mean_Q        | -3.18    |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.55e+03 |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 71       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0319   |
+| test/episode       | 720      |
+| test/mean_Q        | -1.01    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.6e+03  |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 72       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 730      |
+| test/mean_Q        | -3.4     |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.65e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 73       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 740      |
+| test/mean_Q        | -2.14    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.7e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 74       |
+| stats_g/mean       | 0.849    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 750      |
+| test/mean_Q        | -2.58    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.75e+03 |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 75       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 760      |
+| test/mean_Q        | -2.71    |
+| test/success_rate  | 0.9      |
+| train/episode      | 3.8e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 76       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 770      |
+| test/mean_Q        | -0.949   |
+| test/success_rate  | 1        |
+| train/episode      | 3.85e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 77       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 780      |
+| test/mean_Q        | -2.37    |
+| test/success_rate  | 0.8      |
+| train/episode      | 3.9e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 78       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 790      |
+| test/mean_Q        | -1.07    |
+| test/success_rate  | 1        |
+| train/episode      | 3.95e+03 |
+| train/success_rate | 0.56     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 79       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 800      |
+| test/mean_Q        | -2.37    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4e+03    |
+| train/success_rate | 0.62     |
+---------------------------------
+---------------------------------
+| epoch              | 80       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 810      |
+| test/mean_Q        | -0.86    |
+| test/success_rate  | 1        |
+| train/episode      | 4.05e+03 |
+| train/success_rate | 0.78     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 81       |
+| stats_g/mean       | 0.85     |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 820      |
+| test/mean_Q        | -3.66    |
+| test/success_rate  | 0.8      |
+| train/episode      | 4.1e+03  |
+| train/success_rate | 0.62     |
+---------------------------------
+---------------------------------
+| epoch              | 82       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 830      |
+| test/mean_Q        | -2.01    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.15e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 83       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 840      |
+| test/mean_Q        | -2.92    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.2e+03  |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 84       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 850      |
+| test/mean_Q        | -1.21    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.25e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 85       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 860      |
+| test/mean_Q        | -1.1     |
+| test/success_rate  | 1        |
+| train/episode      | 4.3e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 86       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 870      |
+| test/mean_Q        | -4.21    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.35e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 87       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 880      |
+| test/mean_Q        | -0.633   |
+| test/success_rate  | 1        |
+| train/episode      | 4.4e+03  |
+| train/success_rate | 0.72     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 88       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 890      |
+| test/mean_Q        | -1.48    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.45e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 89       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 900      |
+| test/mean_Q        | -3.53    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.5e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 90       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 910      |
+| test/mean_Q        | -5.73    |
+| test/success_rate  | 0.5      |
+| train/episode      | 4.55e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 91       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 920      |
+| test/mean_Q        | -0.862   |
+| test/success_rate  | 1        |
+| train/episode      | 4.6e+03  |
+| train/success_rate | 0.86     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 92       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 930      |
+| test/mean_Q        | -4.39    |
+| test/success_rate  | 0.8      |
+| train/episode      | 4.65e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 93       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 940      |
+| test/mean_Q        | -0.908   |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.7e+03  |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 94       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 950      |
+| test/mean_Q        | -4.81    |
+| test/success_rate  | 0.8      |
+| train/episode      | 4.75e+03 |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 95       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 960      |
+| test/mean_Q        | -3.16    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.8e+03  |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 96       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 970      |
+| test/mean_Q        | -2.81    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.85e+03 |
+| train/success_rate | 0.82     |
+---------------------------------
+---------------------------------
+| epoch              | 97       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 980      |
+| test/mean_Q        | -5.01    |
+| test/success_rate  | 0.8      |
+| train/episode      | 4.9e+03  |
+| train/success_rate | 0.6      |
+---------------------------------
+---------------------------------
+| epoch              | 98       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 990      |
+| test/mean_Q        | -2.89    |
+| test/success_rate  | 0.9      |
+| train/episode      | 4.95e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 99       |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1e+03    |
+| test/mean_Q        | -2.09    |
+| test/success_rate  | 0.8      |
+| train/episode      | 5e+03    |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 100      |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.01e+03 |
+| test/mean_Q        | -2.3     |
+| test/success_rate  | 1        |
+| train/episode      | 5.05e+03 |
+| train/success_rate | 0.62     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+Saving periodic policy to ./ckpt/demo/policy_100.pkl ...
+---------------------------------
+| epoch              | 101      |
+| stats_g/mean       | 0.851    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.02e+03 |
+| test/mean_Q        | -2.4     |
+| test/success_rate  | 1        |
+| train/episode      | 5.1e+03  |
+| train/success_rate | 0.74     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 102      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.03e+03 |
+| test/mean_Q        | -3.2     |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.15e+03 |
+| train/success_rate | 0.62     |
+---------------------------------
+---------------------------------
+| epoch              | 103      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.04e+03 |
+| test/mean_Q        | -6.83    |
+| test/success_rate  | 0.7      |
+| train/episode      | 5.2e+03  |
+| train/success_rate | 0.8      |
+---------------------------------
+---------------------------------
+| epoch              | 104      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.05e+03 |
+| test/mean_Q        | -4.98    |
+| test/success_rate  | 0.8      |
+| train/episode      | 5.25e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 105      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.06e+03 |
+| test/mean_Q        | -5.5     |
+| test/success_rate  | 0.8      |
+| train/episode      | 5.3e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 106      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.07e+03 |
+| test/mean_Q        | -3.7     |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.35e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 107      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.08e+03 |
+| test/mean_Q        | -2.49    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.4e+03  |
+| train/success_rate | 0.74     |
+---------------------------------
+---------------------------------
+| epoch              | 108      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.09e+03 |
+| test/mean_Q        | -7.66    |
+| test/success_rate  | 0.7      |
+| train/episode      | 5.45e+03 |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 109      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.1e+03  |
+| test/mean_Q        | -4.06    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.5e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 110      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.11e+03 |
+| test/mean_Q        | -2.85    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.55e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 111      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.12e+03 |
+| test/mean_Q        | -4.47    |
+| test/success_rate  | 0.8      |
+| train/episode      | 5.6e+03  |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 112      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.13e+03 |
+| test/mean_Q        | -7.13    |
+| test/success_rate  | 0.7      |
+| train/episode      | 5.65e+03 |
+| train/success_rate | 0.86     |
+---------------------------------
+---------------------------------
+| epoch              | 113      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.14e+03 |
+| test/mean_Q        | -2.71    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.7e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 114      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.15e+03 |
+| test/mean_Q        | -3.7     |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.75e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+---------------------------------
+| epoch              | 115      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.16e+03 |
+| test/mean_Q        | -5.12    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.8e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 116      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.17e+03 |
+| test/mean_Q        | -14      |
+| test/success_rate  | 0.4      |
+| train/episode      | 5.85e+03 |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 117      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.18e+03 |
+| test/mean_Q        | -2.36    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.9e+03  |
+| train/success_rate | 0.82     |
+---------------------------------
+---------------------------------
+| epoch              | 118      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.19e+03 |
+| test/mean_Q        | -3.94    |
+| test/success_rate  | 0.9      |
+| train/episode      | 5.95e+03 |
+| train/success_rate | 0.72     |
+---------------------------------
+---------------------------------
+| epoch              | 119      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.2e+03  |
+| test/mean_Q        | -1.04    |
+| test/success_rate  | 1        |
+| train/episode      | 6e+03    |
+| train/success_rate | 0.64     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 120      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.101    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.21e+03 |
+| test/mean_Q        | -4.08    |
+| test/success_rate  | 0.9      |
+| train/episode      | 6.05e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 121      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.22e+03 |
+| test/mean_Q        | -5.66    |
+| test/success_rate  | 0.8      |
+| train/episode      | 6.1e+03  |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 122      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.23e+03 |
+| test/mean_Q        | -3.36    |
+| test/success_rate  | 0.9      |
+| train/episode      | 6.15e+03 |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 123      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.24e+03 |
+| test/mean_Q        | -4.24    |
+| test/success_rate  | 0.8      |
+| train/episode      | 6.2e+03  |
+| train/success_rate | 0.64     |
+---------------------------------
+---------------------------------
+| epoch              | 124      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.25e+03 |
+| test/mean_Q        | -0.966   |
+| test/success_rate  | 1        |
+| train/episode      | 6.25e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 125      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.26e+03 |
+| test/mean_Q        | -5.37    |
+| test/success_rate  | 0.8      |
+| train/episode      | 6.3e+03  |
+| train/success_rate | 0.78     |
+---------------------------------
+---------------------------------
+| epoch              | 126      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.27e+03 |
+| test/mean_Q        | -6.09    |
+| test/success_rate  | 0.8      |
+| train/episode      | 6.35e+03 |
+| train/success_rate | 0.68     |
+---------------------------------
+---------------------------------
+| epoch              | 127      |
+| stats_g/mean       | 0.853    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.28e+03 |
+| test/mean_Q        | -4       |
+| test/success_rate  | 0.9      |
+| train/episode      | 6.4e+03  |
+| train/success_rate | 0.66     |
+---------------------------------
+---------------------------------
+| epoch              | 128      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.29e+03 |
+| test/mean_Q        | -0.943   |
+| test/success_rate  | 1        |
+| train/episode      | 6.45e+03 |
+| train/success_rate | 0.7      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 129      |
+| stats_g/mean       | 0.853    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.3e+03  |
+| test/mean_Q        | -1.41    |
+| test/success_rate  | 1        |
+| train/episode      | 6.5e+03  |
+| train/success_rate | 0.76     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 130      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.0321   |
+| test/episode       | 1.31e+03 |
+| test/mean_Q        | -0.756   |
+| test/success_rate  | 1        |
+| train/episode      | 6.55e+03 |
+| train/success_rate | 0.8      |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 131      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.32e+03 |
+| test/mean_Q        | -4.92    |
+| test/success_rate  | 0.8      |
+| train/episode      | 6.6e+03  |
+| train/success_rate | 0.7      |
+---------------------------------
+---------------------------------
+| epoch              | 132      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.33e+03 |
+| test/mean_Q        | -1.03    |
+| test/success_rate  | 1        |
+| train/episode      | 6.65e+03 |
+| train/success_rate | 0.76     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 133      |
+| stats_g/mean       | 0.853    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.34e+03 |
+| test/mean_Q        | -0.845   |
+| test/success_rate  | 1        |
+| train/episode      | 6.7e+03  |
+| train/success_rate | 0.68     |
+---------------------------------
+New best success rate: 1.0. Saving policy to ./ckpt/demo/policy_best.pkl ...
+---------------------------------
+| epoch              | 134      |
+| stats_g/mean       | 0.852    |
+| stats_g/std        | 0.102    |
+| stats_o/mean       | 0.197    |
+| stats_o/std        | 0.032    |
+| test/episode       | 1.35e+03 |
+| test/mean_Q        | -5.68    |
+| test/success_rate  | 0.7      |
+| train/episode      | 6.75e+03 |
+| train/success_rate | 0.66     |
+---------------------------------

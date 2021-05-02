@@ -1,0 +1,11 @@
+tensorflow-gpu
+gym
+mpi4py
+joblib
+psutil
+pandas
+opencv-python
+keras
+pprint
+pillow
+mujoco-py==0.5.7
